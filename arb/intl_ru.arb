@@ -526,7 +526,7 @@
   "saveChanges": "Сохранить изменения?",
   "generalDesc": "Изменить общие настройки",
   "findProcessModeDesc": "Включить поиск процесса",
-  "tabAnimationDesc": "Только для некоторых мобильных представлений",
+  "tabAnimationDesc": "Работает только в мобильном режиме",
   "ua": "User-Agent",
   "navBarHapticFeedback": "Тактильная отдача",
   "navBarHapticFeedbackDesc": "Вибрация при переключении нижней панели навигации",
