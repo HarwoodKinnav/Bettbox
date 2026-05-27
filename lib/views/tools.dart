@@ -128,6 +128,8 @@ class _ToolViewState extends ConsumerState<ToolsView> {
           itemCount: items.length,
           itemBuilder: (_, index) => items[index],
           padding: const EdgeInsets.only(bottom: 20),
+          // Allow ListView to calculate its own height dynamically
+          shrinkWrap: false,
         ),
       ),
     );
