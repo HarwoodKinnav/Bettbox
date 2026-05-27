@@ -45,13 +45,27 @@ jobs:
         if: matrix.platform == 'windows'
         run: git config --global core.longpaths true
 
-      - name: Setup Keystore (Android)
+  - name: Setup Keystore (Android)
         if: matrix.platform == 'android'
         run: |
-          echo "${{ secrets.KEYSTORE }}" | base64 --decode > android/app/keystore.jks
-          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/local.properties
-          echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/local.properties
-          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/local.properties
+          # Генерируем тестовый keystore если secrets не доступны
+          if [ -z "${{ secrets.KEYSTORE }}" ]; then
+            echo "Generating test keystore for Android..."
+            keytool -genkey -v -keystore android/app/keystore.jks \
+              -keyalg RSA -keysize 2048 -validity 10000 \
+              -alias test_key -storepass 123456 -keypass 123456 \
+              -dname "CN=test, OU=test, O=test, L=test, ST=test, C=US"
+            echo "keyAlias=test_key" >> android/local.properties
+            echo "storePassword=123456" >> android/local.properties
+            echo "keyPassword=123456" >> android/local.properties
+            echo "✓ Test keystore generated"
+          else
+            echo "Using secret keystore..."
+            echo "${{ secrets.KEYSTORE }}" | base64 --decode > android/app/keystore.jks
+            echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/local.properties
+            echo "storePassword=${{ secrets.STORE_PASSWORD }}" >> android/local.properties
+            echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/local.properties
+            echo "✓ Secret keystore loaded"
           
       - name: Setup Java
         if: matrix.platform == 'android'
