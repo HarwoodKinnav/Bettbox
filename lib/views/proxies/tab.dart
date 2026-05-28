@@ -379,33 +379,41 @@ class _ProxyGroupViewState extends ConsumerState<ProxyGroupView> {
       alignment: Alignment.topCenter,
       child: CommonScrollBar(
         controller: _controller,
-        child: GridView.builder(
+        child: CustomScrollView(
           key: _getPageStorageKey(),
           controller: _controller,
           scrollCacheExtent: const ScrollCacheExtent.pixels(500),
-          padding: const EdgeInsets.only(
-            top: 16,
-            left: 16,
-            right: 16,
-            bottom: 96,
-          ),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: widget.columns,
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            mainAxisExtent: getItemHeight(widget.cardType),
-          ),
-          itemCount: sortedProxies.length,
-          itemBuilder: (_, index) {
-            final proxy = sortedProxies[index];
-            return ProxyCard(
-              testUrl: group.testUrl,
-              groupType: group.type,
-              type: widget.cardType,
-              proxy: proxy,
-              groupName: group.name,
-            );
-          },
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.only(
+                top: 16,
+                left: 16,
+                right: 16,
+                bottom: 96,
+              ),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: widget.columns,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  mainAxisExtent: getItemHeight(widget.cardType),
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final proxy = sortedProxies[index];
+                    return ProxyCard(
+                      testUrl: group.testUrl,
+                      groupType: group.type,
+                      type: widget.cardType,
+                      proxy: proxy,
+                      groupName: group.name,
+                    );
+                  },
+                  childCount: sortedProxies.length,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
