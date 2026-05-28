@@ -66,6 +66,27 @@ class _ProxyGroupsListState extends State<_ProxyGroupsList> {
     globalState.appController.updateCurrentUnfoldSet(tempUnfoldSet);
   }
 
+  void _refreshScrollPosition() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted && _scrollController.hasClients) {
+        final position = _scrollController.position;
+        // Пересчитываем размеры контента для правильного расчёта скроллбара
+        position.applyContentDimensions(
+          position.minScrollExtent,
+          position.maxScrollExtent,
+        );
+      }
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant _ProxyGroupsList oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.currentUnfoldSet != widget.currentUnfoldSet) {
+      _refreshScrollPosition();
+    }
+  }
+
   @override
   void dispose() {
     _scrollController.dispose();
