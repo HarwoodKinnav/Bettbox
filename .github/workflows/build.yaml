@@ -23,15 +23,6 @@ jobs:
           - platform: android
             os: ubuntu-24.04
             arch: arm64
-          - platform: android
-            os: ubuntu-24.04
-            arch: amd64
-          - platform: android
-            os: ubuntu-24.04
-            arch: arm
-          - platform: android
-            os: ubuntu-24.04
-            arch: universal
 
     steps:
       - name: Checkout
