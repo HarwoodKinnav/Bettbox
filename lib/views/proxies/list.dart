@@ -131,25 +131,25 @@ class _GroupSection extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 8),
         child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _GroupHeader(
-            group: group,
-            isExpand: isExpand,
-            onToggle: onToggle,
-            cardType: cardType,
-            columns: columns,
-          ),
-          if (isExpand) ...[
-            const SizedBox(height: 8),
-            _ProxyGrid(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _GroupHeader(
               group: group,
-              columns: columns,
+              isExpand: isExpand,
+              onToggle: onToggle,
               cardType: cardType,
-              sortType: sortType,
+              columns: columns,
             ),
+            if (isExpand) ...[
+              const SizedBox(height: 8),
+              _ProxyGridWidget(
+                group: group,
+                columns: columns,
+                cardType: cardType,
+                sortType: sortType,
+              ),
+            ],
           ],
-        ],
         ),
       ),
     );
@@ -336,13 +336,13 @@ class _GroupHeader extends ConsumerWidget {
   }
 }
 
-class _ProxyGrid extends StatelessWidget {
+class _ProxyGridWidget extends StatelessWidget {
   final Group group;
   final int columns;
   final ProxyCardType cardType;
   final ProxiesSortType sortType;
 
-  const _ProxyGrid({
+  const _ProxyGridWidget({
     required this.group,
     required this.columns,
     required this.cardType,
@@ -357,32 +357,28 @@ class _ProxyGrid extends StatelessWidget {
       testUrl: group.testUrl,
     );
 
-    final itemHeight = getItemHeight(cardType);
-
-    return SizedBox(
-      height: ((sortedProxies.length / columns).ceil() * (itemHeight + 8)).toDouble(),
-      child: GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: columns,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          mainAxisExtent: itemHeight,
-        ),
-        itemCount: sortedProxies.length,
-        itemBuilder: (context, index) {
-          final proxy = sortedProxies[index];
-          return ProxyCard(
-            key: ValueKey('${group.name}.${proxy.name}'),
-            proxy: proxy,
-            groupName: group.name,
-            type: cardType,
-            groupType: group.type,
-            testUrl: group.testUrl,
-          );
-        },
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: columns,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        mainAxisExtent: getItemHeight(cardType),
       ),
+      itemCount: sortedProxies.length,
+      itemBuilder: (context, index) {
+        final proxy = sortedProxies[index];
+        return ProxyCard(
+          key: ValueKey('${group.name}.${proxy.name}'),
+          proxy: proxy,
+          groupName: group.name,
+          type: cardType,
+          groupType: group.type,
+          testUrl: group.testUrl,
+        );
+      },
     );
   }
 }
