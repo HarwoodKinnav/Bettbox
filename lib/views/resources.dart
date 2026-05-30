@@ -186,7 +186,7 @@ class _GeoDataListItemState extends State<GeoDataListItem> {
                   child: snapshot.data == null
                       ? SizedBox(width: height, height: height)
                       : Text(
-                          snapshot.data!.desc,
+                          snapshot.data!.getDesc(context),
                           style: context.textTheme.bodyMedium,
                         ),
                 );

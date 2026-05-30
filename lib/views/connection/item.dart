@@ -94,7 +94,7 @@ class TrackerInfoItem extends ConsumerWidget {
               ),
             ),
             Text(
-              trackerInfo.start.lastUpdateTimeDesc,
+              trackerInfo.start.getLastUpdateTimeDesc(context),
               style: context.textTheme.bodySmall?.copyWith(
                 color: context.colorScheme.onSurface.opacity60,
               ),

@@ -290,7 +290,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 4),
-                        Text(fileInfo.desc),
+                        Text(fileInfo.getDesc(context)),
                         const SizedBox(height: 8),
                         Wrap(
                           runSpacing: 6,

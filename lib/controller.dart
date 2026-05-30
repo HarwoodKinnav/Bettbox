@@ -1006,7 +1006,7 @@ class AppController {
   void initLink() {
     linkManager.initAppLinksListen((url) async {
       final res = await globalState.showMessage(
-        title: '${appLocalizations.add}${appLocalizations.profile}',
+        title: appLocalizations.addProfile,
         message: TextSpan(
           children: [
             TextSpan(text: appLocalizations.doYouWantToPass),
@@ -1019,7 +1019,7 @@ class AppController {
               ),
             ),
             TextSpan(
-              text: '${appLocalizations.create}${appLocalizations.profile}',
+              text: appLocalizations.createProfile,
             ),
           ],
         ),
@@ -1084,7 +1084,7 @@ class AppController {
         return await Profile.normal(url: url).update();
       },
       needLoading: true,
-      title: '${appLocalizations.add}${appLocalizations.profile}',
+      title: appLocalizations.addProfile,
     );
     if (profile != null) {
       await addProfile(profile);
@@ -1107,7 +1107,7 @@ class AppController {
         return await Profile.normal(label: platformFile?.name).saveFile(bytes);
       },
       needLoading: true,
-      title: '${appLocalizations.add}${appLocalizations.profile}',
+      title: appLocalizations.addProfile,
     );
     if (profile != null) {
       await addProfile(profile);

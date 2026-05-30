@@ -1,50 +1,37 @@
-import 'package:bett_box/common/app_localizations.dart';
+import 'package:bett_box/common/context.dart';
+import 'package:flutter/material.dart';
 
 extension DateTimeExtension on DateTime {
-  bool get isBeforeNow {
-    return isBefore(DateTime.now());
-  }
+  bool get isBeforeNow => isBefore(DateTime.now());
 
-  bool isBeforeSecure(DateTime? dateTime) {
-    if (dateTime == null) {
-      return false;
-    }
-    return true;
-  }
-
-  String get lastUpdateTimeDesc {
-    final currentDateTime = DateTime.now();
-    final difference = currentDateTime.difference(this);
+  String getLastUpdateTimeDesc(BuildContext context) {
+    final appLocalizations = context.appLocalizations;
+    final difference = DateTime.now().difference(this);
     final days = difference.inDays;
+
     if (days >= 365) {
-      return '${(days / 365).floor()} ${appLocalizations.years}${appLocalizations.ago}';
+      return appLocalizations.yearsAgo((days / 365).floor());
     }
     if (days >= 30) {
-      return '${(days / 30).floor()} ${appLocalizations.months}${appLocalizations.ago}';
+      return appLocalizations.monthsAgo((days / 30).floor());
     }
     if (days >= 1) {
-      return '$days ${appLocalizations.days}${appLocalizations.ago}';
+      return appLocalizations.daysAgo(days);
     }
     final hours = difference.inHours;
     if (hours >= 1) {
-      return '$hours ${appLocalizations.hours}${appLocalizations.ago}';
+      return appLocalizations.hoursAgo(hours);
     }
     final minutes = difference.inMinutes;
     if (minutes >= 1) {
-      return '$minutes ${appLocalizations.minutes}${appLocalizations.ago}';
+      return appLocalizations.minutesAgo(minutes);
     }
-    return appLocalizations.just;
+    return appLocalizations.justNow;
   }
 
-  String get show {
-    return toLocal().toString().substring(0, 10);
-  }
+  String get show => toLocal().toString().substring(0, 10);
 
-  String get showFull {
-    return toLocal().toString().substring(0, 19);
-  }
+  String get showFull => toLocal().toString().substring(0, 19);
 
-  String get showTime {
-    return toLocal().toString().substring(10, 19);
-  }
+  String get showTime => toLocal().toString().substring(11, 19);
 }
