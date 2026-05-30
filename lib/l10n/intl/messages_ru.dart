@@ -318,7 +318,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dialerIp4pConvertDesc": MessageLookupByLibrary.simpleMessage(
       "Включить преобразование IP4P в диалере",
     ),
-    "direct": MessageLookupByLibrary.simpleMessage("Прямой"),
+    "direct": MessageLookupByLibrary.simpleMessage("Напрямую"),
     "directNameserver": MessageLookupByLibrary.simpleMessage("DNS для прямых"),
     "directNameserverDesc": MessageLookupByLibrary.simpleMessage(
       "Используется для разрешения прямых доменов",
@@ -481,7 +481,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "getOriginRules": MessageLookupByLibrary.simpleMessage(
       "Получить исходные правила",
     ),
-    "global": MessageLookupByLibrary.simpleMessage("Глобальный"),
+    "global": MessageLookupByLibrary.simpleMessage("Глобально"),
     "go": MessageLookupByLibrary.simpleMessage("Перейти"),
     "goDownload": MessageLookupByLibrary.simpleMessage("Перейти к загрузке"),
     "harmonyFont": MessageLookupByLibrary.simpleMessage("Шрифт Harmony"),
@@ -596,7 +596,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "loose": MessageLookupByLibrary.simpleMessage("Максимальная"),
     "manualRefreshIp": MessageLookupByLibrary.simpleMessage("Обновить IP"),
-    "memoryInfo": MessageLookupByLibrary.simpleMessage("Память"),
+    "memoryInfo": MessageLookupByLibrary.simpleMessage("Расход памяти"),
     "messageTest": MessageLookupByLibrary.simpleMessage("Тест сообщения"),
     "messageTestTip": MessageLookupByLibrary.simpleMessage(
       "Это тестовое сообщение.",
@@ -613,10 +613,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "mode": MessageLookupByLibrary.simpleMessage("Режим"),
     "monochromeScheme": MessageLookupByLibrary.simpleMessage("Монохром"),
     "monthsAgo": m8,
-    "more": MessageLookupByLibrary.simpleMessage("Подробнее"),
+    "more": MessageLookupByLibrary.simpleMessage("Подробности"),
     "name": MessageLookupByLibrary.simpleMessage("Имя"),
     "nameSort": MessageLookupByLibrary.simpleMessage("По имени"),
-    "nameserver": MessageLookupByLibrary.simpleMessage("Основной DNS-сервер"),
+    "nameserver": MessageLookupByLibrary.simpleMessage("Основной DNS"),
     "nameserverDesc": MessageLookupByLibrary.simpleMessage(
       "Используется для разрешения доменов",
     ),
@@ -879,7 +879,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recoveryAll": MessageLookupByLibrary.simpleMessage("Все данные"),
     "recoveryProfiles": MessageLookupByLibrary.simpleMessage("Только профили"),
     "recoveryStrategy": MessageLookupByLibrary.simpleMessage(
-      "Стратегия восстановления",
+      "Режим восстановления",
     ),
     "recoveryStrategy_compatible": MessageLookupByLibrary.simpleMessage(
       "Совместимость",
