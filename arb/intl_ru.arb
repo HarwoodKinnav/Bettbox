@@ -204,7 +204,7 @@
   "noInfo": "Нет информации",
   "pleaseBindWebDAV": "Привяжите WebDAV",
   "bind": "Привязать",
-  "connectivity": "Подключение:",
+  "connectivity"： "Подключение:",
   "webDAVConfiguration": "Настройки WebDAV",
   "address": "Адрес",
   "addressHelp": "Адрес сервера WebDAV",
