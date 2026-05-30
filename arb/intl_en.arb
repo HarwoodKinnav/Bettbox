@@ -115,6 +115,7 @@
   "add": "Add",
   "save": "Save",
   "delete": "Delete",
+  "seconds": "Seconds",
   "yearsAgo": "{count, plural, =1{1 year ago} other{{count} years ago}}",
   "monthsAgo": "{count, plural, =1{1 month ago} other{{count} months ago}}",
   "daysAgo": "{count, plural, =1{1 day ago} other{{count} days ago}}",

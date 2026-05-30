@@ -939,6 +939,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Global override script config",
     ),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "seconds": MessageLookupByLibrary.simpleMessage("Seconds"),
     "secretCopied": MessageLookupByLibrary.simpleMessage(
       "Secret copied to clipboard",
     ),

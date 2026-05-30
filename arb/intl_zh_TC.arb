@@ -115,6 +115,7 @@
   "add": "新增",
   "save": "儲存",
   "delete": "刪除",
+  "seconds": "秒",
   "yearsAgo": "{count} 年前",
   "monthsAgo": "{count} 個月前",
   "daysAgo": "{count} 天前",

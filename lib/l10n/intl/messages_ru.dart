@@ -242,7 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "connectionsSort": MessageLookupByLibrary.simpleMessage(
       "Сортировка соединений",
     ),
-    "connectivity": MessageLookupByLibrary.simpleMessage("Подключение:"),
+    "connectivity": MessageLookupByLibrary.simpleMessage("Подключение："),
     "contactMe": MessageLookupByLibrary.simpleMessage("Связаться со мной"),
     "content": MessageLookupByLibrary.simpleMessage("Содержимое"),
     "contentScheme": MessageLookupByLibrary.simpleMessage("Контентная тема"),
@@ -459,9 +459,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Принудительный сниффинг доменов",
     ),
     "forceGCDesc": MessageLookupByLibrary.simpleMessage(
-      "Выполнить сборку мусора ядра? Экспериментально, используйте с осторожностью",
+      "Выполнить сброс мусора ядра? Экспериментально, используйте с осторожностью",
     ),
-    "forceGCTitle": MessageLookupByLibrary.simpleMessage("Принудительный GC"),
+    "forceGCTitle": MessageLookupByLibrary.simpleMessage("Очистка кеша ядра"),
     "formatError": MessageLookupByLibrary.simpleMessage("Проверьте формат"),
     "fourColumns": MessageLookupByLibrary.simpleMessage("4 колонки"),
     "fruitSaladScheme": MessageLookupByLibrary.simpleMessage("Фруктовый микс"),
@@ -552,7 +552,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Неверный формат IP или CIDR",
     ),
     "ipClickBehavior": MessageLookupByLibrary.simpleMessage(
-      "Переключение отображения",
+      "Режим отображения",
     ),
     "ipPrivacyProtection": MessageLookupByLibrary.simpleMessage("Скрыть IP"),
     "ipcidr": MessageLookupByLibrary.simpleMessage("IP/CIDR"),
@@ -957,6 +957,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Настройка глобального скрипта переопределения",
     ),
     "search": MessageLookupByLibrary.simpleMessage("Поиск"),
+    "seconds": MessageLookupByLibrary.simpleMessage("секунд"),
     "secretCopied": MessageLookupByLibrary.simpleMessage(
       "Пароль скопирован в буфер обмена",
     ),

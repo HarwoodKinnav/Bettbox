@@ -994,6 +994,11 @@ class AppLocalizations {
     return Intl.message('Delete', name: 'delete', desc: '', args: []);
   }
 
+  /// `Seconds`
+  String get seconds {
+    return Intl.message('Seconds', name: 'seconds', desc: '', args: []);
+  }
+
   /// `{count, plural, =1{1 year ago} other{{count} years ago}}`
   String yearsAgo(num count) {
     return Intl.plural(

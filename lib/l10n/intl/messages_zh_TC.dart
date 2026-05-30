@@ -666,6 +666,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "script": MessageLookupByLibrary.simpleMessage("腳本"),
     "scriptDesc": MessageLookupByLibrary.simpleMessage("配置全局覆寫腳本"),
     "search": MessageLookupByLibrary.simpleMessage("搜尋"),
+    "seconds": MessageLookupByLibrary.simpleMessage("秒"),
     "secretCopied": MessageLookupByLibrary.simpleMessage("密碼已複製到剪貼簿"),
     "selectAll": MessageLookupByLibrary.simpleMessage("全選"),
     "selected": MessageLookupByLibrary.simpleMessage("已選擇"),
