@@ -305,13 +305,13 @@ class ProfileItem extends StatelessWidget {
 
     // Show Unlimited when no traffic info
     if (use == 0 && total == 0) {
-      return 'Unlimited';
+      return '∞';
     }
 
     // Total is 0 but has usage
     if (total == 0) {
       final useShow = TrafficValue(value: use).show;
-      return '$useShow / Unlimited';
+      return '$useShow / ∞';
     }
 
     final useShow = TrafficValue(value: use).show;
